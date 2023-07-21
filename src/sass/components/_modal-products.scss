@@ -1,0 +1,80 @@
+.product__description {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  overflow: auto;
+  width: 100%;
+  min-height: 285px;
+  padding-top: 60px;
+  padding-bottom: 25px;
+  padding-left: 44px;
+  padding-right: 44px;
+  border-radius: 24px;
+  transition: visibility $modal-animation, opacity $modal-animation, transform $modal-animation;
+
+  @include respond-above($tablet) {
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @include respond-above($desktop) {
+    top: 227px;
+    min-height: 300px;
+    padding-top: 60px;
+
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+
+  &--ice-cream {
+    background-image: linear-gradient(to bottom, #fa98b1 50%, $header-main-bg-color);
+
+    box-shadow: 0px 8px 30px #f3aec0;
+  }
+
+  &--ice-coffee {
+    background-image: linear-gradient(to bottom, #d6af77 50%, $brown-card-bg-color);
+
+    box-shadow: 0px 8px 30px #d6af77;
+  }
+
+  &--milkshakes {
+    background-image: linear-gradient(to bottom, #afd47a 50%, $green-card-bg-color);
+
+    box-shadow: 0px 8px 30px #c3e099;
+  }
+
+  &--is-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.product__text--margin-description {
+  margin: 0;
+}
+
+// Btn-close
+.product__btn-close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  stroke: $btn-primary-color;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $btn-secondary-color;
+  }
+}
